@@ -9,21 +9,21 @@ import cn.et.student.StudentService;
 
 public class StudentServiceImpl implements StudentService1 {
 	Scanner sc = new Scanner(System.in);
-	
+	/*ä½ æ˜¯ä¸ªæ–¹ä¾¿*/
 	@Override
 	public int addStudent(List<Student1> list) {
-		System.out.println("ÇëÊäÈëÄãÒªÌí¼ÓµÄÑ§Éúid");
+		System.out.println("è¯·è¾“å…¥ä½ è¦æ·»åŠ çš„å­¦ç”Ÿid");
 		int newId = sc.nextInt();
 		Student1 student = new Student1();
 		student.setId(newId);
 		int mark = judgeStudentId(student, list);
 		if(mark == -1) {
-			System.out.println("ÇëÊäÈëÄãÒªÌí¼ÓµÄÑ§ÉúĞÕÃû");
+			System.out.println("è¯·è¾“å…¥ä½ è¦æ·»åŠ çš„å­¦ç”Ÿå§“å");
 			String newName = sc.next();
 			List<Student1> lis = queryStudentName(newName, list);
-			System.out.println("ÇëÊäÈëÄãÒªÌí¼ÓµÄÑ§ÉúĞÔ±ğ");
+			System.out.println("è¯·è¾“å…¥ä½ è¦æ·»åŠ çš„å­¦ç”Ÿæ€§åˆ«");
 			String newSex = sc.next();
-			System.out.println("ÇëÊäÈëÄãÒªÌí¼ÓµÄÑ§ÉúÄêÁä");
+			System.out.println("è¯·è¾“å…¥ä½ è¦æ·»åŠ çš„å­¦ç”Ÿå¹´é¾„");
 			int newAge= sc.nextInt();
 			Student1 newStudent = new Student1(newId, newName+lis.size(), newSex, newAge);
 			list.add(newStudent);
@@ -35,7 +35,7 @@ public class StudentServiceImpl implements StudentService1 {
 
 	@Override
 	public int deleteStudent(List<Student1> list) {
-		System.out.println("ÇëÊäÈëÄãÒªÉ¾³ıµÄÑ§Éúid");
+		System.out.println("è¯·è¾“å…¥ä½ è¦åˆ é™¤çš„å­¦ç”Ÿid");
 		int newId = sc.nextInt();
 		Student1 student = new Student1();
 		student.setId(newId);
@@ -58,7 +58,7 @@ public class StudentServiceImpl implements StudentService1 {
 
 	@Override
 	public void queryOneStudent(List<Student1> list) {
-		System.out.println("ÇëÊäÈëÄãÒª²éÑ¯µÄĞÕÃû");
+		System.out.println("è¯·è¾“å…¥ä½ è¦æŸ¥è¯¢çš„å§“å");
 		String newName = sc.next();
 		Student1 student =new Student1();
 		student.setName(newName);
@@ -66,14 +66,14 @@ public class StudentServiceImpl implements StudentService1 {
 		if(mark != -1) {
 			System.out.println(list.get(mark));
 		}else {
-			System.out.println("ÄãÒª²éÑ¯µÄÑ§Éú²»´æÔÚ");
+			System.out.println("ä½ è¦æŸ¥è¯¢çš„å­¦ç”Ÿä¸å­˜åœ¨");
 		}
 		
 	}
 
 	@Override
 	public void queryAllStudentName(List<Student1> list) {
-		System.out.println("ÇëÊäÈëÄãÒª²éÑ¯µÄĞÕÃû");
+		System.out.println("è¯·è¾“å…¥ä½ è¦æŸ¥è¯¢çš„å§“å");
 		String newName = sc.next();
 		for(int i = 0;i<list.size();i++) {
 			if(list.get(i).getName().contains(newName)) {
@@ -85,18 +85,18 @@ public class StudentServiceImpl implements StudentService1 {
 
 	@Override
 	public int updateStudent(List<Student1> list) {
-		System.out.println("ÇëÊäÈëÄãÒªĞŞ¸ÄµÄÑ§ÉúĞÕÃû");
+		System.out.println("è¯·è¾“å…¥ä½ è¦ä¿®æ”¹çš„å­¦ç”Ÿå§“å");
 		String newName = sc.next();
 		Student1 student = new Student1();
 		student.setName(newName);
 		int mark = judgeStudentName(student, list);
 		if(mark != -1) {
-			System.out.println("ÇëÊäÈëÄãÒªĞŞ¸ÄµÄĞÂĞÕÃû");
+			System.out.println("è¯·è¾“å…¥ä½ è¦ä¿®æ”¹çš„æ–°å§“å");
 			String newName1 = sc.next();
 			List<Student1> lis = queryStudentName(newName1, list);
-			System.out.println("ÇëÊäÈëÄãÒªĞŞ¸ÄµÄĞÂĞÔ±ğ");
+			System.out.println("è¯·è¾“å…¥ä½ è¦ä¿®æ”¹çš„æ–°æ€§åˆ«");
 			String newSex = sc.next();
-			System.out.println("ÇëÊäÈëÄãÒªĞŞ¸ÄµÄĞÂÄêÁä");
+			System.out.println("è¯·è¾“å…¥ä½ è¦ä¿®æ”¹çš„æ–°å¹´é¾„");
 			int newAge= sc.nextInt();
 			student.setName(newName1+lis.size());
 			student.setSex(newSex);
