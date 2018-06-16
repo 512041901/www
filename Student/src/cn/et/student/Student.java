@@ -13,6 +13,9 @@ public class Student {
 		this.age = age;
 	}
 
+	/**
+	 * 作者是一个构造函数?
+	 */
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
